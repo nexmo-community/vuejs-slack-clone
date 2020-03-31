@@ -13,10 +13,10 @@ import ChatWindow from '@/components/ChatWindow.vue'
 import Loading from '@/components/Loading.vue'
 import Error from '@/components/Error.vue'
 import UserService from '@/services/User'
-import NexmoClient from 'nexmo-client'
+import Client from 'nexmo-client'
 
 export default {
-  name: 'Nexmo',
+  name: 'Vonage',
   props: {
     server: Object
   },
@@ -41,7 +41,7 @@ export default {
         .then((response) => {
           const { token } = response.data
 
-          new NexmoClient()
+          new Client()
             .login(token)
             .then(app => {
               this.app = app

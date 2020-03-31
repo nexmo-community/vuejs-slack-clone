@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Nexmo v-if="!!server.status && server.status === 'ok'" :server="server" />
+    <Vonage v-if="!!server.status && server.status === 'ok'" :server="server" />
     <template v-else>
       <Loading v-if="!error" message="Connecting..." />
       <Error v-else :error="error" />
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Nexmo from '@/components/Nexmo.vue'
+import Vonage from '@/components/Vonage.vue'
 import Error from '@/components/Error.vue'
 import Loading from '@/components/Loading.vue'
 import ServerService from '@/services/Server'
@@ -17,7 +17,7 @@ import ServerService from '@/services/Server'
 export default {
   name: 'App',
   components: {
-    Nexmo,
+    Vonage,
     Error,
     Loading
   },

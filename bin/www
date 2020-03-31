@@ -7,7 +7,7 @@ require('dotenv').config();
  */
 
 var app = require('../app');
-var debug = require('debug')('nexmo-collaborative-chat-runthrough:server');
+var debug = require('debug')('vuejs-slack-clone:server');
 var http = require('http');
 
 /**

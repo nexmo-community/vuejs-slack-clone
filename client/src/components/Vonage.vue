@@ -36,6 +36,9 @@ export default {
     this.fetchSession()
   },
   methods: {
+    _errorHandler (err) {
+      this.error = { title: 'Chat Service Error', message: err.reason }
+    },
     fetchSession () {
       UserService.fetchSession()
         .then((response) => {
@@ -51,13 +54,9 @@ export default {
             .then((conversation) => {
               this.conversation = conversation
             })
-            .catch((err) => {
-              this.error = { title: 'Chat Service Error', message: err.message }
-            })
+            .catch(this._errorHandler)
         })
-        .catch((err) => {
-          this.error = { title: 'Chat Service Error', message: err.reason }
-        })
+        .catch(this._errorHandler)
     }
   }
 }

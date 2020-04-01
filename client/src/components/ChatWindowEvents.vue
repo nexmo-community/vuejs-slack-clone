@@ -3,24 +3,27 @@
     <template v-if="!!events.length">
       <div class="px-6 hover:bg-gray-100" v-for="event in events" v-bind:key="'event' + event.id">
         <div v-if="event.type === 'text'">
-          <strong>{{ members.get(event.from).display_name }}</strong> on <strong>{{ event.timestamp }}</strong> says {{ event.body.text }}
+          <strong>{{ members.get(event.from).display_name }}</strong> on <strong>{{ event.timestamp.split("T")[0] }}</strong> at <strong>{{ event.timestamp.split("T")[1].split(".")[0] }}</strong> says {{ event.body.text }}
         </div>
         <div v-else-if="event.type === 'member:joined'">
           <strong>{{ event.body.user.display_name }}</strong> has joined <strong>#{{ event.conversation.display_name }}</strong>.
         </div>
       </div>
     </template>
-    <Loading v-else message="Loading messages..." />
+    <Loading v-else-if="!error" message="Loading messages..." />
+    <Error v-else :error="error" />
   </div>
 </template>
 
 <script>
 import Loading from '@/components/Loading.vue'
+import Error from '@/components/Error.vue'
 
 export default {
   name: 'ChatWindowEvents',
   components: {
-    Loading
+    Loading,
+    Error
   },
   props: {
     user: Object,
@@ -30,6 +33,7 @@ export default {
   data () {
     return {
       events: [],
+      error: null
     }
   },
   mounted () {

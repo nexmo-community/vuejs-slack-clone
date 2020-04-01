@@ -108,7 +108,7 @@ nexmo conversation:create display_name="general"
 
 #### Create Your User
 
-Now, create a user for yourself. 
+Now, create a user for yourself.
 
 ```bash
 nexmo user:create name=USER_NAME display_name=DISPLAY_NAME
@@ -146,11 +146,14 @@ Now, create a `.env` file and add the credentials you've now generated.
 PORT=3000
 
 # user config
-VONAGE_USER=username # USER_NAME from the above commands
-VONAGE_USER_TOKEN=eyJhbGciOi...XVCJ9.eyJpYXQiOjE1NzM5M...In0.qn7J6...efWBpemaCDC7HtqA # as generated from `nexmo jwt:generate`
+VONAGE_USER=username
+# USER_NAME from the above commands
+VONAGE_USER_TOKEN=eyJhbGciOi...XVCJ9.eyJpYXQiOjE1NzM5M...In0.qn7J6...efWBpemaCDC7HtqA
+# as generated from `nexmo jwt:generate`
 
 # app config
-VONAGE_DEFAULT_CONVERSATION_ID=CON-a57b0...11e57f56d # as generated from `nexmo conversation:create`
+VONAGE_DEFAULT_CONVERSATION_ID=CON-a57b0...11e57f56d
+# as generated from `nexmo conversation:create`
 ```
 
 ### Start the App Locally
@@ -167,7 +170,7 @@ npm run dev
 
 In the interest of fostering an open and welcoming environment, we strive to make participation in our project and our community a harassment-free experience for everyone. Please check out our [Code of Conduct][coc] in full.
 
-## Contributing 
+## Contributing
 We :heart: contributions from everyone! Check out the [Contributing Guidelines][contributing] for more information.
 
 [![contributions welcome][contribadge]][issues]

@@ -58,13 +58,15 @@ nexmo setup <your_api_key> <your_api_secret>
 
 You can use git to clone the [demo application](https://github.com/nexmo-community/vuejs-slack-clone) from GitHub.
 
-> For those uncomfortable with git commands, don't worry, I've you covered. [You can download the project as a ZIP file](https://github.com/nexmo-community/vuejs-slack-clone/archive/master.zip).
+> For those uncomfortable with git commands, don't worry, I've you covered.
 
 Follow this [guide to install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 ### This Demo Application
 
-Clone or [download the demo application](https://github.com/nexmo-community/vuejs-slack-clone/archive/master.zip).
+Clone or download the demo application. To download, [go to the repository](https://github.com/nexmo-community/vuejs-slack-clone) and click on the *Clone or download* button on GitHub.
+
+> ***Note:*** If you download, make sure you're on the right version number before downloading.
 
 ```bash
 git clone https://github.com/nexmo-community/vuejs-slack-clone.git
@@ -76,7 +78,13 @@ Once unzipped or cloned, change into the directory.
 cd vuejs-slack-clone
 ```
 
-Use npm to install the dependencies for the server and client apps.
+If you cloned the repository, checkout the version you want to set up.
+
+```bash
+git checkout part-1
+```
+
+Then, use npm to install the dependencies for the server and client apps.
 
 ```bash
 npm install && npm install -C client/
